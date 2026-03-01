@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 October 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kotak"></div>
+    <div class="box"></div>
+
+    <div class="navbar">
+    <h1>Top up pulsa By Kenny Wang </h1>
+    </div>
+    
+    <h2>Masukkan Nomor Hp</h2>
+    <div class="op">
+    <input type="number" id="phone" style="width: 15%;" placeholder="masukan no hp : Misal 08217777">
+    </div>
+
+    <button>Bayar</button>
+    <div id="operatorInfo"></div>
+    <div id="hargaList"></div>
+
+    <script>
+        const operatorData = [
+            {
+                name : 'Telkomsel',
+                prefixes : ['0852','0813','0821','0812','0823','0822'],
+                harga : [5000,100000,15000,25000,50000,100000]
+            },
+            {
+                name : 'Indosat',
+                prefixes : ['0855','0856','0816','0815'],
+                harga : [5000,100000,15000,25000,50000,100000] 
+            },
+            {
+                name : 'Tri',
+                prefixes : ['0897','0898','0896','0895'],
+                harga : [5000,100000,15000,25000,50000,100000]
+            },
+            {
+                name : 'Exis',
+                prefixes : ['0838','0831'],
+                harga : [5000,100000,15000,25000,50000,100000]
+            },
+             {
+                name : 'Smartfren',
+                prefixes : ['0882','0881','0888','0889'],
+                harga : [5000,100000,15000,25000,50000,100000]
+            },
+             {
+                name : 'XL',
+                prefixes : ['0887','0878','0877','0819','0817'],
+                harga : [5000,100000,15000,25000,50000,100000]
+            }
+        ] ;
+
+        const phoneInput = document.getElementById('phone');
+        const operatorInfo = document.getElementById('operatorInfo');
+        const hargalist = document.getElementById('hargaList');
+
+        phoneInput.addEventListener('input', function() {
+            const nomor = phoneInput.value.trim(); 
+            const prefix = nomor.slice(0,4);
+
+            let operator = null;
+
+            for (let i = 0; i < operatorData.length; i++){
+                if(operatorData[i].prefixes.includes(prefix)){
+                    operator = operatorData[i];
+                    break;
+                }
+            }
+
+            if(operator){
+                operatorInfo.innerText = "operator terdeteksi:" + operator.name;
+                hargaList.innerHTML= "Daftar Harga : <ul>"+ operator.harga.map(h=> `<li>Rp ${h.toLocaleString('id-ID')}</li>`).join('')+"</ul>";
+                
+                }else{
+                    operatorInfo.innerText = "operator tidak dikenali.";
+                    hargaList.innerHTML= ""
+                }
+        })
+    </script>
+
+</body>
+</html>

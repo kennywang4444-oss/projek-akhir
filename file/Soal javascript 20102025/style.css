@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+   
+}
+
+.container1 {
+    display: flex;
+    width: 100%;
+}
+
+.kiri{
+    overflow-y: scroll;
+    height: 88vh;
+    width: 60vw;
+}
+
+.kanan{
+    width: 40%;
+}
+
+.soal {
+    background-color: rgb(136, 56, 56);
+    color: white;
+    border-radius: 5px;
+    width: 600px;
+    height: 120px; 
+    margin-top: 20px;
+    margin-left: 30px; 
+}
+
+
+.judul {
+    background-color: rgb(136, 56, 56);
+    width: 100%;
+    height: 80px;  
+    color: white;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.hasil {
+    background-color: rgb(136, 56, 56);
+    margin-left: px;
+    height: 500px;
+    width: 500px; 
+    font-size: 30pt;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+#hasil{
+    font-size: 50pt;
+    border-radius: 10px;
+}
+
+.h1 {
+    margin-left: 110px;
+    font-size: 20pt;
+}
+
+.r{
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+button{
+    height: 7vh;
+    width: 21vw;
+    background-color: rgb(136, 56, 56);
+    color: white;
+    border-radius: 20px;
+}
+
+button:hover {
+    transition: 0.5;
+    color: aqua;
+}

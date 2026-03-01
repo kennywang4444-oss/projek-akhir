@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 Januari 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+        .bungkus {
+            background:rgb(0, 179, 255);
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 7 solid #ccc;
+            padding: 6px;
+            text-align: center;
+        }
+        .rata-rata {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        h2 {text-align: center; color: #333;}
+
+    
+    @media (max-width: 667px){
+          .tr{
+            width: 10%;
+          }
+          .bungkus{
+            width: 95%;
+            margin-left: -12px;
+          }
+
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="bungkus">
+        <h2>Aplikasi Input Nilai Siswa</h2>
+
+        <input type="text" id="nama" placeholder="Input Nama Siswa">
+        <input type="number" id="nilai" placeholder="Input Nilai Siswa">
+        <input type="number" id="kehadiran" placeholder="Input Kehadiran Siswa">
+
+        <button onclick="tambahSiswa()">Input Siswa</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Nilai</th>
+                    <th>Kehadiran</th>
+                    <th>Grade</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="tableSiswa"></tbody>
+        </table>
+
+        <div class="rata-rata" id="ratarata"></div>
+    </div>
+
+    <script>
+        const daftarSiswa = [];
+
+        function tambahSiswa() {
+            const nama = document.getElementById('nama').value.trim();
+            const nilai = parseFloat(document.getElementById('nilai').value);
+            const kehadiran = parseFloat(document.getElementById('kehadiran').value);
+
+            // Validasi kosong
+            if (nama === "" || isNaN(nilai) || isNaN(kehadiran)) {
+                alert('Semua form harus terisi');
+                return;
+            }
+
+            // Validasi rentang
+            if (nilai < 0 || nilai > 100 || kehadiran < 0 || kehadiran > 100) {
+                alert('Nilai dan kehadiran harus 0 s/d 100');
+                return;
+            }
+
+            // Tentukan Grade
+            let grade = "";
+            if (nilai >= 85) {
+                grade = "A";
+            } else if (nilai >= 75) {
+                grade = "B";
+            } else if (nilai >= 60) {
+                grade = "C";
+            } else {
+                grade = "D";
+            }
+
+           
+            let status = "";
+            if (nilai >= 75 && kehadiran >= 80) {
+                status = "Lulus";
+            } else {
+                status = "Tidak Lulus";
+            }
+
+            const siswa = { nama, nilai, kehadiran, grade, status };
+            daftarSiswa.push(siswa);
+
+            tampilkanSiswa();
+            tampilkanRataRata();
+
+            document.getElementById('nama').value = "";
+            document.getElementById('nilai').value = "";
+            document.getElementById('kehadiran').value = "";
+        }
+
+        function tampilkanSiswa() {
+            const table = document.getElementById('tableSiswa');
+            table.innerHTML = "";
+
+            daftarSiswa.forEach(s => {
+                const row = `
+                    <tr>
+                        <td>${s.nama}</td>
+                        <td>${s.nilai}</td>
+                        <td>${s.kehadiran}%</td>
+                        <td>${s.grade}</td>
+                        <td>${s.status}</td>
+                    </tr>
+                `;
+                table.innerHTML += row;
+            });
+        }
+
+        function tampilkanRataRata() {
+            if (daftarSiswa.length === 0) return;
+
+            const total = daftarSiswa.reduce((sum, s) => sum + s.nilai, 0);
+            const rata = (total / daftarSiswa.length).toFixed(2);
+
+            document.getElementById('ratarata').innerText =
+                `Rata-rata nilai: ${rata}`;
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>

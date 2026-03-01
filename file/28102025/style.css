@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+nav {
+            background-color: rgb(72, 72, 72);
+            color: white;
+            padding: 1rem 2rem;
+       }
+
+       nav .logo{
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+       nav .menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+       }
+
+       nav .menu a{
+        color: white;
+        font-size: 15pt;
+        text-decoration: none;
+        position: relative;
+        padding: 0.5rem 0;
+        transition: color 0.3s ease;
+       }
+
+       nav .menu a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: rgb(255, 255, 255);
+        transition: width 0.3s ease;
+       }
+
+       nav .menu a:hover::after {
+        width: 100%
+       }
+
+     
+
+       .menu-icon span {
+        height: 3px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+       }
+
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }

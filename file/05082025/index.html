@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Konversi Berat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kotak1">
+     <h1>Konversi berat By kenny wang 8i</h1>
+     </div>
+    <div class="bks-utama">
+        
+       
+        <input type="number" id="textBox" placeholder="Masukkan " ><br>
+        <h3>Masukkan Angka</h3>
+        <br>
+        <br>
+        <label>Pilih Unit Awal :</label><br>
+        <select id="unit1">
+            <option value="">Pilih</option>
+            <option value="Kg">Kg</option>
+            <option value="Hg">Hg</option>
+            <option value="Dam">Dag</option>   
+            <option value="G">G</option>     
+            <option value="DG">DG</option>  
+            <option value="CG">CG</option>    
+            <option value="MG">MG</option>   
+        </select>
+        <br>
+        <label>Pilih Unit Akhir :</label><br>
+        <select id="unit2">
+            <option value="">Pilih</option>
+            <option value="Kg">Kg</option>
+            <option value="Hg">Hg</option>
+            <option value="Dam">Dag</option>   
+            <option value="G">G</option>     
+            <option value="DG">DG</option>  
+            <option value="CG">CG</option>    
+            <option value="MG">MG</option>                 
+        </select>
+        <br>
+        <br>
+        <button type="button" onclick='convert()'>Submit</button>
+        
+        <div class="bks-kedua">
+        <h2 id="result">Result</h2>
+        <h4>Hasil konversi</h4>
+        </div>
+        </div>
+        </div>
+    
+
+<script>
+    // ini adalah javascript
+const result = document.getElementByI("result");
+
+
+function convert(){
+    let temp;
+    let unit1 = document.getElementById("unit1").value;
+    let unit2 = document.getElementById("unit2").value;
+    // 1
+    if(unit1 == "Kg" && unit2 == "Kg"){
+        temp = parseFloat(textBox.value);   
+        result.innerHTML = temp*(0)+"Kg";
+    } 
+    else if(unit1 == "Kg" && unit2 == "Hg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp*(10)+ "°Hg";
+    } 
+    else if(unit1 == "Kg" && unit2 == "Dam"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp*(100)+ "Dam";
+    }else if(unit1 == "Kg" && unit2 == "Dam"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp*(100)+ "Dam";
+    } 
+    else if(unit1 == "Kg" && unit2 == "G"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp*(1000)+ " G";
+    }
+    else if(unit1 == "Kg" && unit2 == "DG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp*(10000) + "DG";
+    } 
+    else if(unit1 == "Kg" && unit2 == "CG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp*(1000000) + "Cg";
+    } 
+     else if(unit1 == "Kg" && unit2 == "MG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp*(10000000)+ "MG";
+    } 
+    // 2
+    else if(unit1 == "Hg" && unit2 == "Hg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp + "Hg";
+    } 
+    else if(unit1 == "Hg" && unit2 == "Kg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = 1/10*temp+ "Kg";
+    } 
+    else if(unit1 == "Hg" && unit2 == "Dam"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (10)*temp+ "Dam";
+    } 
+    else if(unit1 == "Hg" && unit2 == "G"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp*(100)+ " G";
+    }
+    else if(unit1 == "Hg" && unit2 == "DG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1000)*temp + "DG";
+    } 
+    else if(unit1 == "Hg" && unit2 == "CG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (100000)*temp+ "CG";
+    
+    } 
+    else if(unit1 == "Hg" && unit2 == "MG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (10000000)*temp + "MG";
+    } 
+    else if(unit1 == "Dam" && unit2 == "Kg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/100)*temp + "KG";
+    } 
+    else if(unit1 == "Dam" && unit2 == "Hg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/10)*temp + "Hg";
+    } 
+
+    else if(unit1 == "Dam" && unit2 == "Dam"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp + "Dam";
+    } 
+    else if(unit1 == "Dam" && unit2 == "G"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (10)*temp + "G";
+    } 
+    else if(unit1 == "Dam" && unit2 == "DG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (100)*temp + "DG";
+    } 
+    else if(unit1 == "Dam" && unit2 == "CG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1000)*temp + "CG";
+    } 
+    else if(unit1 == "Dam" && unit2 == "MG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (100000)*temp + "MG";
+    } 
+
+    else if(unit1 == "G" && unit2 == "Kg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/1000)*temp + "KG";
+    } 
+    else if(unit1 == "G" && unit2 == "Hg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/100)*temp + "HG";
+    } 
+    else if(unit1 == "G" && unit2 == "Dam"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/10)*temp + "MG";
+    } 
+    else if(unit1 == "G" && unit2 == "G"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp + "G";
+    } 
+    else if(unit1 == "G" && unit2 == "DG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (10)*temp + "DG";
+    } 
+    else if(unit1 == "G" && unit2 == "CG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (100)*temp + "CG";
+    } 
+    else if(unit1 == "G" && unit2 == "MG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1000)*temp + "MG";
+    } 
+    else if(unit1 == "DG" && unit2 == "Kg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/1000000)*temp + "Kg";
+    } 
+     else if(unit1 == "DG" && unit2 == "Hg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/100000)*temp + "Hg";
+    } 
+     else if(unit1 == "DG" && unit2 == "Dag"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/10000)*temp + "Dag";
+    } 
+     else if(unit1 == "DG" && unit2 == "G"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/100)*temp + "G";
+    } 
+     else if(unit1 == "DG" && unit2 == "DG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp + "DG";
+    } 
+     else if(unit1 == "DG" && unit2 == "CG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (10)*temp + "CG";
+    } 
+     else if(unit1 == "DG" && unit2 == "MG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (100)*temp + "MG";
+    } 
+     else if(unit1 == "CG" && unit2 == "Kg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/100000)*temp + "Kg";
+    } 
+    else if(unit1 == "CG" && unit2 == "Hg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/10000)*temp + "Hg";
+    } 
+     else if(unit1 == "CG" && unit2 == "Dam"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/1000)*temp + "Dam";
+    } 
+     else if(unit1 == "CG" && unit2 == "G"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/100)*temp + "G";
+    } 
+     else if(unit1 == "CG" && unit2 == "DG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/10)*temp + "DG";
+    } 
+     else if(unit1 == "CG" && unit2 == "CG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp + "Hg";
+    } 
+     else if(unit1 == "CG" && unit2 == "MG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (10)*temp + "MG";
+    } 
+    // mg
+     else if(unit1 == "MG" && unit2 == "Kg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/1000000)*temp + "Hg";
+    } 
+     else if(unit1 == "MG" && unit2 == "Hg"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/100000)*temp + "Hg";
+    } 
+     else if(unit1 == "MG" && unit2 == "Dam"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/10000)*temp + "Dam";
+    } 
+     else if(unit1 == "MG" && unit2 == "G"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/1000)*temp + "G";
+    } 
+     else if(unit1 == "MG" && unit2 == "DG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/100)*temp + "DG";
+    } 
+     else if(unit1 == "MG" && unit2 == "MG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = (1/10)*temp + "MG";
+    } 
+     else if(unit1 == "MG" && unit2 == "MG"){
+        temp = parseFloat(textBox.value);
+        result.innerHTML = temp + "MG";
+    } 
+    console.log(temp); 
+
+   
+}
+</script>
+</body>
+</html>

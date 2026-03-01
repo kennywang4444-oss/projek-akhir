@@ -1,0 +1,126 @@
+body {
+    background: #D9D9D9;
+
+}
+
+
+.bks-utama {
+    width: 560px;
+    height: 50vh;
+    border: solid rgb(0, 0, 0);
+    text-align: center;
+    background-color: #BDAAAA;
+    margin-left: 300px;
+    margin-top: 40px;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.bks-kedua {
+    width: 560px;
+    height: 50vh;
+    border: solid rgb(0, 0, 0);
+    text-align: center;
+    background-color: #BDAAAA;
+    margin-left: 590px;
+    margin-top: -371px;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+
+button:hover {
+    color: rgb(0, 0, 0);
+    transform: translate(0px);
+    border-radius: 2px;
+
+} 
+
+button {
+    background-color: #2cb354;
+    height: 60px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 14pt;
+    color: #444444;
+    margin-bottom: 20px;
+    border: #edf0f0;
+    transition: 0.5 ease;
+    margin-right: 380px;
+    
+}
+label {
+    margin-right: 360px;
+}
+
+button:hover {
+    background-color: #2cb354;
+    cursor: pointer;
+    border-radius: 5px;
+}
+select {
+    width: 200px;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #00fff7;
+    border: 1px solid #444444;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 50%;
+}
+
+h2 {
+    margin-top: 12%;
+    font-weight: 1000;
+} 
+
+.kotak1{
+    width: 61%;
+    height: 90px;
+    background-color: antiquewhite;
+    margin-left: 300px;
+    margin-top: 30px;
+    border-radius: 10px;
+    
+    
+}
+
+.kotak1 h1 {
+    margin-left: 30%;
+    padding-top: 20px;
+}
+
+input[type="number"], input[type=""] {
+    width: 200px;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #00ffea;
+    border: 1px solid #444444;
+    text-decoration: transparent;
+    margin-top: 90px;
+    margin-right: 50%;
+}
+
+h3 {
+    margin-top: -60px;
+    margin-right: 60%;
+}
+
+.bks-kedua h2 {
+    margin-top: 170px;
+    font-size: 60pt;
+    
+}
+
+.bks-kedua h4 {
+    margin-top: -250px;
+    font-size: 20pt;
+    
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotobox by KW</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <div class="kotak">
+        <h2>Fotobox by Kenny Wang</h2>
+    </div>   
+    <div class="box">
+        <div class="bungkus">
+            <div class ="tulis">
+                <h1>Smile For Camera | Cheese</h1>
+            </div>
+            <div>
+                <div>
+                    <video id="video" autoplay></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                </div>
+                <div class="vertical-line"></div>
+                <div class="photobox-photos" id="photos"></div>
+            </div>
+            <div class="b">
+                <button id="snap">Take Photo</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+        const snapButton = document.getElementById('snap');
+        const canvas = document.getElementById('canvas');
+        const photoBox = document.getElementById('photos');
+        const context = canvas.getContext('2d');
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+        })
+        .catch(err => {
+            console.log('Tidak bisa akses kamera:', err);
+        });
+
+        snapButton.addEventListener('click', () => {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const imgData = canvas.toDataURL('image/png');
+            const img = document.createElement('img');
+            img.src = imgData;
+           
+            photoBox.appendChild(img);
+        });
+
+        canvas.width = 350;
+        canvas.height = 250;
+    </script>
+</body>
+</html>

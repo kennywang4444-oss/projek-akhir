@@ -1,0 +1,97 @@
+*{
+    background-color: rgb(249, 252, 252);
+}
+
+h1 {
+    margin-left: 20px;
+    color: rgb(0, 0, 0);
+    margin-bottom: -6px;
+}
+
+h2 {
+    margin-left: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 30pt;
+    margin-top: 5px;
+
+}
+
+h3 {
+    color: red;
+    margin-left: 40px;
+}
+  
+.skibidi {
+    margin-top: 80px;
+    margin-left: 90px;
+}
+
+.isi {
+    font-size: 15pt;
+    margin-left: 20px;
+    width: 500px;
+    padding-top: 1px;
+    
+}
+
+.isi2 {
+    font-size: 15pt;
+    margin-left: 20px;
+    width: 500px;
+    margin-top: 20px;
+}
+
+.box {
+    display: flex;
+    margin-top: -40px;
+}
+
+.gambar1 {
+    background-color: rgb(73, 77, 75);
+    width: 140px;
+    height: 140px;
+    margin-top: 70px;
+    margin-left: 20px;
+}
+
+.gambar2 {
+    background-color: rgb(73, 77, 75);
+    width: 140px;
+    height: 140px;
+    margin-left: 30px;
+    margin-top: 70px;
+}
+
+.gambar3 {
+    background-color: rgb(73, 77, 75);
+    width: 140px;
+    height: 140px;
+    margin-left: 30px;
+    margin-top: 70px;
+}
+
+.gambar4 {
+    background-color: rgb(73, 77, 75);
+    width: 500px;
+    height: 550px;
+    margin-left: 50%;
+}
+
+.box2 {
+    display: flex;
+    
+}
+
+.container2 {
+    margin-top: -560px;
+    margin-left: 100px;
+}
+
+.container1 {
+    margin-left: 90px;
+    margin-top: -30px;
+}
+
+span {
+    color: aqua;
+}

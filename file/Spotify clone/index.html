@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify by Kenny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+    <div class="sidebar-menu">
+        <div class="sidebar-logo">
+            
+        </div>
+        <button class="sidebar-btn">Home</button>
+        <button class="sidebar-btn">Radio</button>
+        <button class="sidebar-btn">Search</button>
+    </div>
+    <div class="sidebar-playlist">
+        <h3>Playlist</h3>
+         <div class="sidebar-newplaylist">
+        <span class="plus-icon">+</span>
+        New Playlist
+    </div>
+        <ul>
+            <li>Pemuja Rahasia</li>
+            <li>Aku Milikmu</li>
+            <li>Kangen</li>
+            <li>Lesung Pipi</li>
+            <li>Calon Mantu Terbaik</li>
+            <li>J.A.P</li>
+            <li>Cinta dan Rahasia</li>
+            <li>Tersenyum, Entah untuk siapa</li>
+            <li>Kasih Aba-Aba</li>
+            <li>Mejikuhibiniu</li>
+            
+            <!-- Tambah playlist lain di sini -->
+        </ul>
+    </div>
+</div>
+    <div class="profile">
+    <img src="avatar1.jpg" alt="Profile" class="profile-img">
+    <div class="profile-info">
+        <span class="profile-name">Kenny Wang</span>
+        <span class="profile-status">Premium User</span>
+    </div>
+</div> 
+    <h2>Spotify By Kenny Wang</h2>
+    <audio src=""id="audioPlayer"controls></audio><br>
+    
+ 
+
+    <div class="player-controls">
+    <button onclick="prevSong()">Prev</button>
+    <button onclick="pauseSong()">Play/Pause</button>
+    <button onclick="stopSong()">Stop</button>
+    <button onclick="nextSong()">Next</button>
+    <button onclick="repeatSong()">Repeat : Off</button>
+</div>
+
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <tr onclick="pilihlagu(0)">
+            <td>1</td>
+            <td>Aku milikmu</td>
+            <td>Dewa 19</td>
+            <td>Format masa depan</td>
+            <td>5.32</td>
+        </tr>
+         <tr onclick="pilihlagu(1)">
+            <td>2</td>
+            <td>Pemuja Rahasia</td>
+            <td>Sheila On 7</td>
+            <td>Pejantan tangguh</td>
+            <td>3.55</td>
+        </tr>
+        <tr onclick="pilihlagu(2)">
+            <td>3</td>
+            <td>Kangen</td>
+            <td>Dewa 19</td>
+            <td>Dewa 19</td>
+            <td>5.32</td>
+        </tr>
+         <tr onclick="pilihlagu(3)">
+            <td>4</td>
+            <td>Lesung pipi</td>
+            <td>Raim laode</td>
+            <td>Raim laode</td>
+            <td>3.16</td>
+        </tr>
+         <tr onclick="pilihlagu(4)">
+            <td>5</td>
+            <td>Calon mantu terbaik mamamu</td>
+            <td>Bodonk koplo</td>
+            <td>Bodonk koplo</td>
+            <td>3.10</td>
+        </tr>
+         <tr onclick="pilihlagu(5)">
+            <td>6</td>
+            <td>J.A.P</td>
+            <td>Sheila on 7</td>
+            <td>Sheila on 7</td>
+            <td>4.36</td>
+        </tr>
+        <tr onclick="pilihlagu(6)">
+            <td>7</td>
+            <td>Cinta dan rahasia</td>
+            <td>Yura & glenn fredly</td>
+            <td>Yura & glenn fredly</td>
+            <td>4.25</td>
+        </tr>
+        <tr onclick="pilihlagu(7)">
+            <td>8</td>
+            <td>Tersenyum,Entah untuk siapa</td>
+            <td>HIVI!</td>
+            <td>HIVI!</td>
+            <td>4.36</td>
+        </tr>
+        <tr onclick="pilihlagu(8)">
+            <td>9</td>
+            <td>Kasih Aba-Aba</td>
+            <td>Naykilla,Tenxi & jemsii</td>
+            <td>Naykilla,Tenxi & jemsii</td>
+            <td>2.33</td>
+        </tr>
+        <tr onclick="pilihlagu(9)">
+            <td>10</td>
+            <td>Mejikuhibiniu</td>
+            <td>Tenxi & jemsii</td>
+            <td>Tenxi & jemsii</td>
+            <td>3.31</td>
+        </tr>
+    </table>
+    <div class="lirik" id="lirik">
+        Lirik lagu ada di sini!
+    </div>
+
+    <script>
+    const audioPlayer = document.getElementById("audioPlayer")
+    const lirik = document.getElementById("lirik")
+    let isRepeat = false
+    const repeatBtn = document.querySelector('button[onclick="repeatSong()"]')
+        const lagu = [
+            {
+         src: "Aku Milikmu.mp3",
+        lirik: `Lirik lagu aku milikmu
+Terdengar lirih bisikanmu
+Diantara bayang-bayangmu
+Terucap kata cinta
+Yang dulu tersimpan
+Dan tak mau pergi
+
+Sekejap cinta terlahir
+Namun jadi sebuah cerita
+Yang tak mungkin terlupa
+Kuukir dihati
+Dan tak mau pergi
+
+Mungkinkah kumiliki
+Cinta seperti ini lagi
+Jangan biarkan aku
+Kehilangan dirimu
+
+Coba dengarkanlah sumpahku (janji suci)
+Dari hati aku cinta kamu
+Jangan dengar kata mereka
+Yang tak ingin kita satu
+Yakinkan aku milikmu
+Aku milikmu
+
+Jalinan cinta tulus suci
+Terpadu terikat erat
+Jangan terpisah lagi
+Waktu 'kan menguji
+Cinta kita berdua
+
+`        },
+        {
+            src: "Sheila On 7 - Pemuja Rahasia (Lyric Video).mp3",
+             lirik: `Lirik lagu pemuja rahasia
+             kuawali hariku dengan mendoakanmu
+agar kau selalu sehat dan bahagia di sana
+sebelum kau melupakanku lebih jauh
+sebelum kau meninggalkanku lebih jauh
+
+ku tak pernah berharap kau kan merindukan keberadaanku
+yang menyedihkan ini
+ku hanya ingin bila kau melihatku kapanpun dimanapun
+hatimu kan berkata seperti ini
+
+pria inilah yang jatuh hati padamu
+pria inilah yang kan selalu memujamu
+begitu para rapper coba menghiburku
+
+aku lah orang yang selalu menaruh bunga dan menuliskan cinta di atas meja kerjamu
+aku lah orang yang kan selalu mengawasimu
+menikmati indahmu dari sisi gelapku
+
+dan biarkan aku jadi pemujamu
+jangan pernah hiraukan perasaan hatiku
+tenanglah tenang pujaan hatiku sayang
+aku takkan sampai hati bila menyentuhmu
+
+* mungkin kau takkan pernah tahu
+betapa mudahnya kau untuk dikagumi
+mungkin kau takkan pernah sadar
+betapa mudahnya kau untuk dicintai
+
+aku lah orang yang akan selalu memujamu
+aku lah orang yang akan selalu mengintaimu
+aku lah orang yang akan selalu memujamu
+aku lah orang yang akan selalu mengintaimu
+
+repeat *
+
+karena hanya dengan perasaan rinduku yang dalam padamu
+ku pertahankan hidup
+maka hanya dengan jejak-jejak hatimu
+ada artiku telusuri hidup ini
+selamanya hanya ku bisa memujamu
+selamanya hanya ku bisa merindukanmu
+
+`
+             
+            
+        },
+ 
+
+
+       {
+        src: "Dewa 19 - Kangen (Official Audio).mp3",
+        lirik: `Lirik lagu Kangen Dewa 19 
+        Kutrima suratmu
+Tlah kubaca dan aku mengerti
+Betapa merindunya dirimu akan hadirnya diriku
+Didalam hari-harimu
+Bersama lagi
+
+Kau tanyakan padaku
+Kapan aku akan kembali lagi
+Katamu kau tak kuasa
+Melawan gejolak didalam dada
+Yang membara menahan rasa
+Pertemuan kita nanti
+Saat bersama dirimu
+
+Semua kata rindumu
+Semakin membuatku tak berdaya
+Menahan rasa ingin jumpa
+Percayalah padaku akupun rindu kamu
+Ku akan pulang melepas semua kerinduan
+Yang terpendam
+
+Kau tuliskan padaku
+Kata cinta
+Yang manis dalam suratmu
+Kau katakan padaku
+Saat ini
+Kuingin hangat pelukmu
+Dan belai lembut kasihmu
+Takkan kulupa slamanya
+Saat kau ada di sisiku
+
+Semua kata rindumu
+Semakin membuatku tak berdaya
+Menahan rasa ingin jumpa
+Percayalah padaku akupun rindu kamu
+Ku akan pulang melepas semua kerinduan
+Yang terpendam
+
+Jangan katakan cinta
+Menambah beban rasa
+Sudah simpan saja sedihmu itu
+Ku akan datang
+
+Semua kata rindumu
+Semakin membuatku tak berdaya
+Menahan rasa ingin jumpa
+Percayalah padaku akupun rindu kamu
+Ku akan pulang melepas semua kerinduan
+Yang terpendam
+
+Semua kata rindumu
+Semakin membuatku tak berdaya
+Menahan rasa ingin jumpa
+Percayalah padaku akupun rindu kamu
+Ku akan pulang melepas semua kerinduan
+Yang terpendam
+` },
+        {
+            src: "Raim Laode  Lesung Pipi  video lirik official.mp3",
+            lirik: `Lirik lagu Lesung Pipi 
+            Tatkala mentari
+Terbenang di ufuk barat
+Disaat itulah
+Dingin rindu selimuti
+Keindahan senyuman dari
+Lesung pipi itu
+Menikmati imaji bersamamu
+
+Maka terimalah diriku
+Kita akan bahagia selamanya
+Kuberjanji jadi suamimu
+Dan ku akan memberikan yang terbaik untukmu
+
+Ku sadar lirikku
+Tak seindah lagu indie
+Yang slalu kau dengar
+Meracuni telingamu
+
+Kupastikan ini bukan tentang senja dan lara
+Sahajamu warnai duniaku
+
+Maka terimalah diriku
+Kita akan bahagia selamanya
+Kuberjanji jadi suamimu
+Dan ku akan memberikan yang terbaik untukmu
+
+Perbedaan buat kita terus bersama
+Izinkan ku jaga hatimu
+
+Maka terimalah diriku
+Kita akan bahagia selamanya
+Kuberjanji jadi suamimu
+Dan ku akan memberikan yang terbaik untukmu
+Karena itu tugas cinta memberikan keindahan
+Meskipun hidup
+Tak selalu indah
+Meskipun hidup
+Tak selalu indah
+`
+        },
+        {
+            src: "Calon Mantu Idaman (feat. Ncum).mp3",
+            lirik: `Lirik lagu Calon Mantu Idaman
+            Suara lembutmu
+Mengisyaratkan cinta
+Tatap matamu
+Buatku menggila
+Kecup manismu
+Wanna be all over you
+Terus mendekat
+Biar ku dekap
+
+Tick Tock
+Hatiku kau zip lock
+Makin lama It’s stuck
+Ku percaya ini with my luck
+It’s just me and you against the world
+Forever im yours and you’ll be mine
+But do you feel it too?
+Like the way I do?
+Aku calon mantu terbaik mamamu
+Walaupun hatimu
+Sekeras batu
+Still got you on mind
+No matter what you do
+But do you feel it too?
+Like the way I do?
+Aku calon mantu terbaik mamamu
+Walaupun hatimu
+Sekeras batu
+Still got you on mind
+no matter what you do
+
+Baby aku rindu resah selalu ingin bertemu
+Hold you in my arms
+Baby tell me do you feel it too?
+Main main
+Ku cuma mind mine,
+Stay for the night maybe it will be alright
+Tick Tock
+Hatiku kau zip lock
+Makin lama It’s stuck
+Ku percaya ini with my luck
+It’s just me and you against the world
+Forever im yours and youll be mine
+But do you feel it too?
+Like the way I do?
+Aku calon mantu terbaik mamamu
+Walau hatimu
+Sekeras batu
+Still got you on mind I still got you in my mind
+Baby do you feel it too`
+        },
+        {
+            src: "ytmp3free.cc_sheila-on-7-jap-youtubemp3free.org.mp3",
+             lirik: `Lirik lagu J.A.P
+             Lelap haru di taman
+Bias makna yang terpendam
+Alas tonggak harapan
+
+Belai indah matamu
+Teman mimpi tanpa jemu
+Biar terkadang semu
+
+Untaian bunga canda
+Tempat kau lepaskan tawa
+Tenang hati terbaca
+
+Kini tiba waktuku
+Untuk puitiskan sayang
+Untuk katakan cinta
+
+Reff:
+Jadikan aku pacarmu
+Kan kubingkai s'lalu indahmu
+Jadikanlah aku pacarmu
+Iringilah kisahku
+
+Kini tiba waktuku
+Untuk puitiskan sayang
+Untuk katakan cinta
+
+Jangan pernah lari dariku
+Jangan engkau lupakan aku
+
+`
+        },
+        {
+             src: "Yura Yunita ft. Glenn Fredly - Cinta dan Rahasia (Official Lyric Video).mp3",
+             lirik: `Lirik lagu Cinta dan rahasia
+             Terakhir kutatap mata indahmu
+Di bawah bintang bintang
+Terbelah hatiku
+Antara cinta dan rahasia
+
+Ku cinta padamu
+Namun kau milik sahabatku
+Dilema hatiku
+Andai ku bisa berkata sejujurnya
+
+Jangan kau pilih dia
+Pilihlah aku yang mampu mencintamu lebih dari dia
+Bukan ku ingin merebutmu dari sahabatku
+Namun kau tahu
+Cinta tak bisa tak bisa kau salahkan
+
+[Glenn Fredly:]
+Ku cinta padamu
+Namun kau milik sahabatku
+Dilema hatiku
+Andai ku bisa berkata sejujurnya
+
+Jangan kau pilih dia
+Pilihlah aku yang mampu mencintamu lebih dari dia
+Bukan ku ingin merebutmu dari sahabatku
+Namun kau tahu
+Cinta tak bisa tak bisa kau salahkan
+
+[Yura:]
+Jangan kau pilih dia
+Pilihlah aku yang mampu mencintamu lebih dari dia
+Bukan ku ingin merebutmu dari sahabatku
+Namun kau tahu
+Cinta tak bisa tak bisa kau salahkan
+
+Tak bisa kau salahkan
+Tak bisa kau salahkan`
+        },
+        {
+                src: "HIVI! - Tersenyum, Untuk Siapa_ (Official Lyric Video).mp3",
+                lirik: `Lirik lagu Tersenyum untuk siapa 
+                gemar sekali kita bersilat lidah
+Sejak langit gelap hingga kembali cerah
+Oh, gemar sekali kita berbeda pandang
+Semula meradang terkadang kembali terang
+
+Oh, sudah sudah sudahlah sudah
+Hati ini berserah
+Pada garis yang cerah
+
+Dan ku tersenyum entah untuk siapa
+Menebak nebak siapa dalangnya
+Aku atau dirimu
+Entah karena apa
+Menanti nanti akhir cerita
+Cerita asmara
+Asmara kita berdua
+Yang seharusnya berakhir bahagia
+
+Oh, sudah sudah sudahlah sudah
+Hati ini berserah
+Pada garis yang cerah
+
+Dan ku tersenyum entah untuk siapa
+Menebak nebak siapa dalangnya
+Aku atau dirimu
+Entah karena apa
+Menanti nanti akhir cerita
+Cerita asmara
+Asmara kita berdua
+Yang seharusnya berakhir bahagia
+
+Mungkin kita hanya harus berfikir
+Berfikir mengapa rasa ini terukir
+Mungkin kita harusnya menyadari
+Ini bukan saja tentangku atau dirimu
+
+Ku tersenyum entah untuk siapa
+Aku atau dirimu
+
+Dan ku tersenyum entah untuk siapa
+Menebak nebak siapa dalangnya
+Aku atau dirimu
+Entah karena apa
+Menanti nanti akhir cerita
+Cerita asmara
+Asmara kita berdua
+Yang seharusnya berakhir bahagia
+
+Ku tersenyum entah untuk siapa
+Aku atau dirimu
+Cerita asmara
+Asmara kita berdua
+Yang seharusnya berakhir dan benar benar berakhir bahagia
+
+Oh, mengapa tidak kita sudahi, sudahi saja`
+        },
+        {
+            src: "Naykilla, Tenxi & Jemsii - Kasih Aba-Aba (Official Music Video).mp3",
+            lirik: `Lirik lagu Kasih Aba-Aba
+            (Oh wow...)
+(Ooii Jemsii!)
+
+Ku merasakan apa yang kau rasakan
+Tanpa ragu ku bilang kamu
+Yang paling paham aku
+Dua jadi satu, belah hati aku
+Aku mau maju tapi tinggal tunggu waktu
+
+Kasih aba-aba kalo udah siap
+Kucoba melihat tapi masih gelap
+Kamu paling bright (Silau, silau)
+Gapapa lah...
+Gapapa lebay (Aaaah)
+
+Yeah, aku mau test
+Dia mau aku atau mau cash
+But she know that I'm the best
+Udah pintar, ku 'gausah les
+Dia suka baju hitamku, celana camo ku
+Kalo kurang asik, kita putar lagu
+Lagu siapa? Ya lagu aku
+Kalo duet, ya sama kamu
+
+Ku merasakan apa yang kau rasakan
+Tanpa ragu ku bilang kamu
+Yang paling paham aku
+Dua jadi satu, belah hati aku
+Aku mau maju tapi tinggal tunggu waktu
+
+Ku merasakan apa yang kau rasakan
+Tanpa ragu ku bilang kamu
+Yang paling paham aku (Oh)
+Dua jadi satu, belah hati aku (Ooh-oh)
+Aku mau maju tapi tinggal tunggu waktu
+
+Dia tanya aku punya plan (Hey)
+Dia tau kalo I'm the man (Hey, hey)
+Kamu Tinker Bell, aku Peter Pan
+Tapi ini nyata no bukan cerpen
+Ini bukan cerpen
+She's 10 outta 10
+Pilih mau mana, dollar atau yen?
+Angkat koper, kita pergi Japan
+I'll give you the best that I can
+
+Aku mau cari jalan tengah
+Buat kamu apa yang 'gabisa
+Ajak kamu ke angkasa
+Go to the moon, kita berdansa
+Aku wish you best (Ooh)
+Kamu yang the best (Ooh)
+Kata mamaku... (Ooh-whoa)
+Masih muda, banyak waktu-u
+
+Ku merasakan apa yang kau rasakan
+Tanpa ragu ku bilang kamu
+Yang paling paham aku
+Dua jadi satu, belah hati aku
+Aku mau maju tapi tinggal tunggu waktu
+MEJIKUHIBINIU
+Mejikuhibiniu, ku lihat kamu
+Hidup penuh warna warni saat ku bersamamu
+Satu untuk semua dan semua untuk satu
+Kenapa ada dia di antara kau dan aku
+
+[Bridge: Tenxi]
+Di antara kau dan a-
+Di antara kau dan a-
+Di antara kau dan a (ku)
+Di antara kau dan a-
+Di antara kau dan a-
+
+[Chorus: Tenxi]
+Cuma kamu tak 'da yang lain
+Ku bilang, "Aku nggak main-main"
+Apa yang kau mau ku turutin
+Sekarang kamu sama yang lain
+Awalnya ku cuma cobain
+Tapi ku ketagihan
+Ku bilang, "Amin", sampai ke pelaminan
+Jangan disamain, sama mantan lu, bajingan
+Ulang lagi, ku cari yang lain
+
+`
+            },
+             {
+            src: "Tenxi, suisei & Jemsii - mejikuhibiniu (Official Music Video).mp3",
+            lirik: `Lirik lagu Mejikuhibiniu
+            [Intro]
+Oyy Jemsii
+
+[Verse 1: Tenxi]
+Mejikuhibiniu, ku lihat kamu
+Hidup penuh warna warni saat ku bersamamu
+Satu untuk semua dan semua untuk satu
+Kenapa ada dia di antara kau dan aku
+
+[Bridge: Tenxi]
+Di antara kau dan a-
+Di antara kau dan a-
+Di antara kau dan a (ku)
+Di antara kau dan a-
+Di antara kau dan a-
+
+[Chorus: Tenxi]
+Cuma kamu tak 'da yang lain
+Ku bilang, "Aku nggak main-main"
+Apa yang kau mau ku turutin
+Sekarang kamu sama yang lain
+Awalnya ku cuma cobain
+Tapi ku ketagihan
+Ku bilang, "Amin", sampai ke pelaminan
+Jangan disamain, sama mantan lu, bajingan
+Ulang lagi, ku cari yang lain
+[Instrumental Break]
+
+[Verse 2: Suisei]
+Tak sepantasnya (sepantasnya)
+Bilang cinta kalau nggak bisa tahan (tahan)
+Putar fakta, kau bilang aku yang salah (aku yang salah)
+Yang tahu semuanya, ya cuma Tuhan
+Kenapa masih kurang? (Sungguh keterlaluan)
+Ku kira takkan terulang
+Saat ku nggak karuan, ku tahu kamu bersulang
+Memang s'karang semuanya t'lah hancur melebur (t'lah hancur melebur)
+Tapi seenggaknya aku nggak pernah palsu (nggak pernah palsu)
+
+[Pre-Chorus: Suisei]
+(Ah) Kayak kamu, kayak kamu, kayak kamu (kayak kamu)
+Cuma kamu, cuma kamu, cuma kamu (miaw miaw)
+Tapi cuma ada dia di hati-mu (Tapi untukku?)
+
+[Chorus: Tenxi]
+Cuma kamu tak 'da yang lain
+Ku bilang, "Aku nggak main-main"
+Apa yang kau mau ku turutin
+Sekarang kamu sama yang lain
+Awalnya ku cuma cobain
+Tapi ku ketagihan
+Ku bilang, "Amin", sampai ke pelaminan
+Jangan di samain, sama mantan lu, bajingan
+Ulang lagi, ku cari yang lain
+[Outro: Tenxi]
+Ku cari yang lain
+Ku cari yang lain
+Ku cari yang lain
+Ku cari yang lain
+Ku cari yang lain
+Ku cari yang lain
+`
+             }
+        
+    ]
+
+    let laguindex = 0; 
+
+    function loadSong(index){
+        laguindex = index;
+        audioPlayer.pause();
+        audioPlayer.src = lagu[index].src;
+        audioPlayer.load();
+        audioPlayer.play(); 
+        lirik.innerText = lagu[index].lirik;
+    }  
+
+        function pauseSong(){
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+    } else {
+        audioPlayer.pause();
+    }
+}
+    function stopSong(){
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+}
+        function nextSong(){
+        laguindex = (laguindex + 1) % lagu.length;
+        loadSong(laguindex);
+    }
+
+        function prevSong(){
+    laguindex = (laguindex - 1 + lagu.length) % lagu.length;
+    loadSong(laguindex);
+}
+
+        function pilihlagu(index){
+            loadSong(index)
+        }
+
+    function nextSong(){
+        laguindex = (laguindex + 1) % lagu.length;
+        loadSong(laguindex);
+    }
+    function repeatSong(){
+    isRepeat = !isRepeat;
+    repeatBtn.innerText = "Repeat : " + (isRepeat ? "On" : "Off");
+    }
+
+        audioPlayer.addEventListener('ended', function(){
+        if(isRepeat){
+            audioPlayer.currentTime = 0;
+            audioPlayer.play();
+        }else{
+            nextSong();
+        }
+    });
+    </script>
+</body>
+</html>

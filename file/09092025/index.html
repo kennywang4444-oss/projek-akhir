@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punya kenny wang</title> 
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+     <div class="navbar">
+            <div class="logo">
+                <h1>Theater</h1>
+            </div>
+            <ul class="menu">
+                <li>Tv Show</a></li>
+                <li>Movies</a></li>
+                <li>Videos</a></li>
+            </ul>
+        </div>
+    <div class="container">
+   
+    <div class="container1">
+        <img src="468.jpg" alt="" id="img">
+        <div class="buttons">
+            <button>Suka</button>
+             <button>Tidak Suka</button>
+        </div>
+    </div>
+    <div class="container2">
+        <h2>Judul Film</h2>
+        <div class="ntah">
+            <div class="buttons">
+            <button>Tonton</button>
+            
+        </div>
+        <div class="y">
+                <button>Download</button>
+            </div>
+        </div>
+        <p >Sinopsis</p>
+        <div class="isi">
+            <p id="sinopsis"></p>
+        </div>
+    </div>
+    <div class="container3">
+        <h3>Pilih Film</h3>
+    <select name="" id="film">
+        <option value="">-- Daftar Film --</option>
+        <option value="film1">My Hero Academia The Movie: You're Next</option>
+        <option value="film2">My Hero Academia World Heroes Mission</option>
+        <option value="film3">Spy X Family Code: White</option>
+        <option value="film4">Demon Slayer: Infinity Castle</option>
+        <option value="film5">My Hero Academia: Two Heroes</option>
+        <option value="film6">Demon Slayer: Swordsmith Village Arc</option>
+        <option value="film7">Your Name</option>
+        <option value="film8">Blue Lock Episode Nagi</option>
+        <option value="film9">Look Back</option>
+        <option value="film10">The Tunnel To Summer, The Exit Of Goodbyes</option>  
+    </select>
+    <h4>Harga</h4>
+        <p id="harga">.</p>
+    <h4>Jumlah Tiket</h4>
+        <input type="number" id="j_tiket">
+     <h4>Jumlah Bayar</h4>
+     
+    <p id="bayar">.</p>
+       <div class="buttons1">
+         <button onclick="hitung()">Hitung</button>
+        <button>bayar</button>
+       </div>
+
+    </div>
+    </div>
+    <script>
+        let selectElement = document.getElementById('film');
+        let imgElement = document.getElementById('img')
+        selectElement.addEventListener("change", function(){
+            let selectValue = selectElement.value;
+
+            if(selectValue === "film1"){
+                imgElement.src ='5.jpeg'
+                harga = 54000
+                sinopsis = 'Bagus Banget, keren.'
+            }else if(selectValue === "film2"){
+                imgElement.src = '20.jpeg'
+                harga = 50000
+                sinopsis = 'Pertempurannya Bagus Banget'
+            }else if(selectValue === "film3"){
+                imgElement.src = '19.jpeg'
+                harga = 55000
+                sinopsis = 'Keren Banget'
+            }else if(selectValue === "film4"){
+                imgElement.src = '21.jpeg'
+                harga = 65000
+                sinopsis = 'KEREN BANGET HAHAHAH'
+            }else if(selectValue === "film5"){
+                imgElement.src = '15.jpeg'
+                harga = 50000
+                sinopsis = 'Seru, keren'
+            }else if(selectValue === "film6"){
+                imgElement.src = '11.jpeg'
+                harga = 55000
+                sinopsis = 'Bikin merinding'
+            }else if(selectValue === "film7"){
+                imgElement.src = '2.jpeg'
+                harga = 50000
+                sinopsis = 'SEDIH BANGETT'
+            }else if(selectValue === "film8"){
+                imgElement.src = '10.jpeg'
+                harga = 50000
+                sinopsis = 'SERU'
+            }else if(selectValue === "film9"){
+                imgElement.src = '9.jpeg'
+                harga = 55000
+                sinopsis = 'Insiprasi'
+            }else if(selectValue === "film10"){
+                imgElement.src = '18.jpeg'
+                harga = 50000
+                sinopsis = 'SEDIH'
+            }
+            document.getElementById('harga').textContent = harga;
+            document.getElementById('sinopsis').textContent = sinopsis;
+
+        });
+        function hitung(){
+            let j_tiket = parseFloat(document.getElementById('j_tiket').value)
+            let bayar = harga * j_tiket;
+            const format = bayar.toLocaleString('id-ID');
+            document.getElementById('bayar').textContent = `Rp${format}`;
+        }
+    </script>
+</body>
+</html>

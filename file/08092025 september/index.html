@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 september 2025 Kenny Wang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Rumah sakit indonesia raya</h1>
+    <div class="bks-utama">
+    <div class="isi">
+    <h3>Counter 1</h3>
+   
+    <p id="number">D0</p>
+    <button id="minus" onclick="kurang()">-</button>
+    <button id="reset" onclick="reset()">Reset</button>
+    <button id="plus" onclick="tambah()">+</button>
+    </div>
+   </div>
+
+   <div class="bks-kedua">
+    <div class="isi2">
+    <h3>Counter 2</h3>
+    
+    <p id="numbe">A0</p>
+    <button id="minu" onclick="kuran()">-</button>
+    <button id="rese" onclick="rese()">Reset</button>
+    <button id="plu" onclick="tamba()">+</button>
+    </div>
+   </div>
+</body>
+
+<script>
+    let number = 0;
+
+    function ubahtampilan(){
+        document.getElementById("number").textContent=`D${number}`;
+        document.getElementById("plus").disabled = number === 10;
+        document.getElementById("minus").disabled = number === -10;
+
+    }
+    function tambah (){
+        number++;
+        ubahtampilan();
+    }
+
+    function kurang(){
+        if(number > 0){
+            number--;
+            ubahtampilan();
+        }
+    }
+
+    function reset (){
+        number = 0;
+        ubahtampilan();
+    }
+
+    let numbe = 0;
+
+    function ubahtampila(){
+        document.getElementById("numbe").textContent=`A${numbe}`;
+        document.getElementById("plu").disabled = numbe === 10;
+        document.getElementById("minu").disabled = numbe === -10;
+
+    }
+    function tamba (){
+        numbe++;
+        ubahtampila();
+    }
+
+    function kuran(){
+        if(numbe > 0){
+            numbe--;
+            ubahtampila();
+        }
+    }
+
+    function rese (){
+        numbe = 0;
+        ubahtampila();
+    }
+</script>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan For Loop</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-uuu(135deg, #00d9ff, #1dab66);
+            font-family: Arial, sans-serif;
+        }
+
+        .bungkus {
+            background: #ffffff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .bungkus h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #18e1a8;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #16ccae;
+            outline: none;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        input[type="number"]:focus {
+            border-color: #11e4b6;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #16f4f4;
+            color: rgb(0, 205, 223);
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #00ffe1;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f5f6fa;
+            max-height: 250px;
+            overflow-y: auto;
+            font-size: 14px;
+            color: #1be4bf;
+        }
+
+        strong {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="bungkus">
+        <h2>Latihan For Loop</h2>
+        <input type="number" id="numberInput" placeholder="Masukkan angka">
+        <button onclick="tampilkanAngka()">Tampilkan</button>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function tampilkanAngka(){
+            let angka = document.getElementById("numberInput").value;
+            let output = document.getElementById("output");
+
+            let genap = "";
+            let Tiga = "";
+            let ganjil = "";
+
+            output.innerHTML = "";
+            output.innerHTML += "<strong>Angka 1 sampai " + angka + ":</strong><br>";
+            for(let i = 1; i <= angka; i++){
+                output.innerHTML += i + " ";
+            }
+
+            for (let i = 1; i <= angka; i++){
+                if(i % 2 === 0){
+                    genap += i + " ";
+                } else {
+                    ganjil += i + " ";
+                }
+
+                if(i % 3 === 0){
+                    Tiga += i + " ";
+                }
+            }
+
+            output.innerHTML += "<br><br><strong>Genap:</strong><br>" + genap;
+            output.innerHTML += "<br><br><strong>Ganjil:</strong><br>" + ganjil;
+            output.innerHTML += "<br><br><strong>Kelipatan 3:</strong><br>" + Tiga;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java script</title>
+</head>
+<body>
+    <script>
+        Array
+        let buah = ["apel","pisang","jeruk"]
+        console.log(buah)
+        console.log(buah [0])
+        console.log(buah [1])
+        buah.push ("mangga")
+        console.log(buah)
+        buah.pop()
+        console.log(buah)
+        buah.splice(0)
+        console.log(buah)
+
+        let siswa = {
+            nama : "alex",
+            umur : 12,
+            email: 'elx@gmail.com',
+            alamat :{
+                jalan : 'jalan skidi', 
+                kota : 'jakarta'
+            }
+        }
+
+        console.log('Nama saya : ' + siswa.nama)
+        console.log('Alamat saya : ' + siswa.alamat.jalan)
+        console.log('alamat saya : ' + siswa.alamat.kota)
+
+        // soal 1
+        console.log("Soal 1")
+        let angka = [10,20,30,40]
+        console.log(angka)
+
+        let num = [10,20,30,40]
+        console.log(num[0]+ num[1] + num[2] + num[3])
+
+        // soal 2
+        console.log("Soal 2")
+        let buku = {
+            judul : " mistery rumah vier",
+            penulis : "vier",
+            tahun :  2011,
+            genre: 'horor',
+            alamat : {
+                harga : "20.000",
+                tahun2 : "2025"
+            }
+            
+
+        }
+        console.log('judul buku :' + buku.judul)
+        console.log('Penulis buku : ' + buku.penulis)
+        console.log('genre : ' + buku.genre)
+        console.log('Tahun : ' +buku.tahun)
+        console.log('Harga : ' + buku.alamat.harga)
+        console.log('tahun : ' + buku.alamat.tahun2)
+
+        // for(let i = 0; i<10; i ++){
+        //     console.log('perulangan ke -' + i)
+        // }
+    
+        // let x = 1;
+        // while(x < 10) {
+        //     console.log('perulangan ke -'+ x)
+        //     x++;
+        // }
+
+        // for(let k = 0; k<3 ;k ++){
+        //     for(let l = 0; l<3;l ++){
+                // console.log(`k=${k},l=${1}`)
+        //     } 
+        // }
+
+
+        // soal 1
+        for(let i = 10; i>1 ;i --){    
+             console.log('perulangan ke -'+ i)
+            } 
+        let x = 1;
+        // soal 2
+        let  y = 0;
+        while(y<22){
+            console.log('perulangan ke-' + y)
+            y+=2
+        }
+
+        // soal 3
+       for(k="*"; k <"*****"; k+="*"){          
+            console.log(`k=${k}`) 
+        }
+        
+        // soal 4
+        
+        for(let po = 0; po<17; po++){
+            console.log("komputer"+po+' dalam kondisi baik')
+        }
+        console.log("komputer17 sedang dalam penginstalan ")
+                for(let po = 15; po<21; po++){
+            console.log("komputer"+po+' sedang rusak')
+
+                }
+                
+
+    </script>
+</body>
+</html>
