@@ -1,0 +1,133 @@
+/* Reset dan font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #ffffff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    background: #ffffff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.navbar h1 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Kontainer utama */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Judul */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+/* Input nomor HP */
+.op {
+    margin-bottom: 20px;
+}
+
+#phone {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+}
+
+#phone:focus {
+    border-color: #007bff;
+}
+
+/* Tombol Bayar */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Info operator */
+#operatorInfo {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #007bff;
+    font-size: 18px;
+}
+
+/* Daftar harga */
+#hargaList {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#hargaList ul {
+    list-style: none;
+    padding: 0;
+}
+
+#hargaList li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #007bff;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .navbar h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    #phone {
+        width: 100%;
+    }
+}
